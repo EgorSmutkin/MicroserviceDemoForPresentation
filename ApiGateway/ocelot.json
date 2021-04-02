@@ -1,0 +1,26 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/product",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+          {
+              "Host": "localhost",
+              "Port": 59834
+          }
+      ],
+
+      "UpstreamPathTemplate": "/productInfo",
+      "UpstreamHttpMethod": [ "Get", "POST", "POST", "PUT", "DELETE" ],
+
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 7,
+        "Limit": 1
+      }
+
+    }
+  ]
+}
